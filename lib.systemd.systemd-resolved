@@ -1,0 +1,26 @@
+# Last Modified: Thu Jan  3 09:55:34 2019
+#include <tunables/global>
+
+/lib/systemd/systemd-resolved {
+  #include <abstractions/base>
+
+  capability net_raw,
+  capability setpcap,
+  capability net_bind_service,
+
+  /etc/hosts r,
+  /etc/nsswitch.conf r,
+  /etc/passwd r,
+  /etc/systemd/resolved.conf r,
+  /lib/systemd/systemd-resolved mr,
+  /lib/x86_64-linux-gnu/ld-*.so mr,
+  /proc/cmdline r,
+  /proc/sys/kernel/hostname r,
+  /proc/sys/kernel/random/boot_id r,
+  /run/systemd/netif/links/* r,
+  /run/systemd/resolved.conf.d/ r,
+  /run/systemd/resolved.conf.d/* r,
+  owner /proc/*/stat r,
+  owner /run/systemd/resolve/* rw,
+
+}
