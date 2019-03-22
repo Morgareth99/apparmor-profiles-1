@@ -1,0 +1,20 @@
+# Last Modified: Fri Mar 22 10:43:40 2019
+#include <tunables/global>
+
+/usr/local/sbin/stubby {
+  #include <abstractions/base>
+  #include <abstractions/nameservice>
+  #include <abstractions/openssl>
+
+  capability net_bind_service,
+
+  /lib/x86_64-linux-gnu/ld-*.so mr,
+  /usr/local/sbin/stubby mr,
+
+  /run/stubby.pid rw,
+  /root/.getdns/ rw,
+
+  /etc/stubby/** r,
+  /usr/share/dns/root.key r,
+
+}
