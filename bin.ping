@@ -10,7 +10,7 @@
 # ------------------------------------------------------------------
 
 #include <tunables/global>
-profile ping /{usr/,}bin/ping flags=(complain) {
+profile ping /{usr/,}bin/ping {
   #include <abstractions/base>
   #include <abstractions/consoles>
   #include <abstractions/nameservice>
